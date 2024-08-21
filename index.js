@@ -41,7 +41,7 @@ app.use((req, res, next) => {
     if(shouldRouteRh(req)) rh.emit("request", req, res); else next();
 });
 
-app.use(serveStatic(fileURLToPath(new URL("../static/", import.meta.url))));
+app.use(serveStatic(fileURLToPath(new URL("./static/", import.meta.url))));
 
 server.on("request", app);
 server.on("upgrade", (req, socket, head) => {
